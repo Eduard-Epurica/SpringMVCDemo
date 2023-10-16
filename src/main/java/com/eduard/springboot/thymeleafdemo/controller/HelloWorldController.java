@@ -3,6 +3,8 @@ package com.eduard.springboot.thymeleafdemo.controller;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -11,7 +13,7 @@ public class HelloWorldController {
 
     // Add a new controller method to show the initial HTML form
 
-    @RequestMapping("/showForm")
+    @GetMapping("/showForm")
     public String showForm() {
         return "helloworld-form";
     }
@@ -42,7 +44,7 @@ public class HelloWorldController {
         return "helloworld";
     }
 
-    @RequestMapping("/processFormV3")
+    @PostMapping("/processFormV3")
     public String processFormV3(@RequestParam("studentName") String theName,
                                 Model model){
 
