@@ -44,6 +44,15 @@ public class HelloWorldController {
         return "helloworld";
     }
 
+    @RequestMapping("/testForm")
+    public String testEnvironment(HttpServletRequest request, Model model){
+        String testEnv = request.getParameter("studentName");
+
+        model.addAttribute("testmsg", testEnv);
+
+        return "hello";
+    }
+
     @PostMapping("/processFormV3")
     public String processFormV3(@RequestParam("studentName") String theName,
                                 Model model){
